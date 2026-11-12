@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website for Emmanuel Ogunsoala.">
+    <title>Emmanuel Ogunsoala | Portfolio</title>
+</head>
+<body>
+    
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="nav-brand">MyPortfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="section hero">
+        <div class="container">
+            <h1>Welcome to My Portfolio</h1>
+            <p>This is the home section of my portfolio website.</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    Hello, my name is Ogunsola Emmanuel. I am a Computer Science undergraduate at Caleb University
+                    with a deep passion for software engineering, secure coding principles, and cybersecurity.
+                    Inspired to bridge the gap between robust software development and automated threat defense,
+                    I am actively building my expertise across Java, Python, and web technologies with the ultimate
+                    goal of becoming an Application Security (AppSec) Engineer.
+                </p>
+                <p>
+                    Beyond my technical coursework, I channel my creativity into digital storytelling and worldbuilding,
+                    such as authoring my supernatural fiction novel <em>The Split Heir</em>, which gives me a strong eye
+                    for detail, structural design, and methodical problem-solving in everything I build.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="image22.jpeg" alt="Portrait of a developer smiling while working on a laptop at a desk">
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="section">
+        <div class="container work-container">
+            <h2>My Work</h2>
+            <p class="work-intro">Here are a few of my recent projects. Check them out below.</p>
+            <div class="table-responsive">
+                <table class="projects-table">
+                    <thead>
+                        <tr>
+                            <th>Project Name</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>E-Commerce Dashboard</strong></td>
+                            <td>A responsive dashboard for managing e-commerce operations, built with React and Node.js.</td>
+                            <td><a href="https://github.com/yourusername/e-commerce-dashboard" target="_blank" rel="noopener noreferrer">View Project</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Weather App</strong></td>
+                            <td>A simple weather application that displays current conditions and forecasts for any location.</td>
+                            <td><a href="https://github.com/yourusername/weather-app" target="_blank" rel="noopener noreferrer">View Project</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Task Management Tool</strong></td>
+                            <td>A lightweight task management application for organizing and tracking daily activities.</td>
+                            <td><a href="https://github.com/yourusername/task-management-tool" target="_blank" rel="noopener noreferrer">View Project</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="section">
+        <div class="container resume-container">
+            <h2>Resume & Introduction</h2>
+            <p class="resume-intro">Download my full professional resume or listen to a quick audio introduction below.</p>
+
+            <div class="download-box">
+                <a href="Professional_Resume.pdf" download class="btn">Download Resume</a>
+            </div>
+
+            <div class="intro-media">
+                <h3>Audio Introduction</h3>
+                <audio controls class="audio-player">
+                    <source src="audio intro.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container contact-container">
+            <h2>Get In Touch</h2>
+            <p>Feel free to reach out if you have any questions or opportunities!</p>
+            <form id="contactForm" class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Ogunsola Emmanuel" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="emma@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Emmanuel Ogunsoala. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (!name || !email || !message) {
+                    alert('Please complete all fields before sending your message.');
+                    return;
+                }
+
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitButton.textContent;
+
+                submitButton.disabled = true;
+                submitButton.textContent = 'Message Sent';
+
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalText;
+                    contactForm.reset();
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
